@@ -7,13 +7,13 @@ function getComputerChoice() {
     //randomly return one of the three choices
     let choice = Math.random()*3;
     if(choice <1) {
-        return "rock";
+        return "Rock";
     } 
     else if (choice<2) {
-        return "paper";
+        return "Paper";
     }
     else {
-        return "scissors";
+        return "Scissors";
     }
 }
 
@@ -24,7 +24,7 @@ function getHumanChoice(){
 function playRound(humanChoice, computerChoice){
 
     if (humanChoice.toLowerCase()=='paper'){
-        switch(computerChoice){
+        switch(computerChoice.toLowerCase()){
             case 'paper':
                 console.log("You tie! Paper can't beat paper.");
                 break;
@@ -38,7 +38,7 @@ function playRound(humanChoice, computerChoice){
                 console.log("What happened?")
         }
     } else if (humanChoice.toLowerCase()=='rock'){
-        switch(computerChoice){
+        switch(computerChoice.toLowerCase()){
             case 'paper':
                 console.log("You lose! Paper beats rock.");
                 break;
@@ -52,7 +52,7 @@ function playRound(humanChoice, computerChoice){
                 console.log("What happened?")
         }
     } else {
-        switch(computerChoice){
+        switch(computerChoice.toLowerCase()){
             case 'paper':
                 console.log("You win! Scissors beats paper.");
                 break;
@@ -71,4 +71,6 @@ function playRound(humanChoice, computerChoice){
 
 let computer = getComputerChoice();
 let human = getHumanChoice();
+console.log(`Computer move: ${computer} | Your move: ${human}.`);
+
 playRound(human, computer);
